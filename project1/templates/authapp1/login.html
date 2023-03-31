@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+ <title>login page</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <center><h4>LOGIN FORM</h4></center>
+        <form method="post">
+            {% csrf_token %}
+            <label for="un"><b>ENTER USERNAME</b></label>
+            <input type="text" id="un" name="un" class="form-control">
+            <br>
+            <br>
+            <label for="pw"><b>ENTER PASSWORD</b></label>
+            <input type="text" id="pw" name="pw" class="form-control">
+            <br>
+            <br>
+            <input type="submit" value="Login" class="btn btn-outline-success col-4">
+            <input type="reset" class="btn btn-outline-dark col-4 float-right">
+
+        </form>
+
+    </div>
+{% endblock %}

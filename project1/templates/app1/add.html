@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>ADD ACCOUNT</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container jumbotron">
+    <center><h1>ADD ACCOUNT PAGE</h1></center>
+    <form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+     <input type="submit" value="ADD ACCOUNT" class="btn btn-outline-success col-5">
+     <input type="reset"   value="RESET"  class="btn btn-outline-warning col-5 float-right">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>SHOW ACCOUNT</title>
+{% endblock %}
+
+{% block content %}
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>ROLL NUMBER</th>
+            <th>MAIL</th>
+            <th>MOBILE NO</th>
+            <th>ADDRESS</th>
+            <th>DOB</th>
+            <th>MARKS</th>
+            <th>ACTION</th>
+        </tr>
+
+    </thead>
+    <tbody>
+    {% for obj in objs %}
+        <tr>
+            <td>{{obj.name}}</td>
+            <td>{{obj.roll_no}}</td>
+            <td>{{obj.mail}}</td>
+            <td>{{obj.mobileno}}</td>
+            <td>{{obj.address}}</td>
+            <td>{{obj.dateofbirth}}</td>
+            <td>{{obj.marks}}</td>
+            <td>
+                <a href="{% url 'update_url' obj.id %}"><button class="btn btn-outline-warning btn-sn">UPDATE</button></a>
+                <a href="{% url 'delete_url' obj.id %}"><button class="btn btn-outline-danger btn-sn">DELETE</button></a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}
+</html>

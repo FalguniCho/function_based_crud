@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+ <title>SIGNUP PAGE</title>
+{% endblock %}
+
+{% block content %}
+  <div>
+   <center><h1>SIGN UP FORM</h1></center>
+   <form method="post">
+    {% csrf_token%}
+    {{form|crispy}}
+    <input type="submit" value="Sign up" class="btn btn-outline-success col-3">
+    <input type="reset"  value="reset"  class="btn btn-outline-dark col-3">
+   </form>
+  </div>
+{% endblock %}
